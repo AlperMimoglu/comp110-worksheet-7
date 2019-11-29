@@ -22,11 +22,13 @@ namespace comp110_worksheet_7
 			return File.GetAttributes(path).HasFlag(FileAttributes.Directory);
 		}
 
-		// Return the total size, in bytes, of all the files below the given directory
-		public static long GetTotalSize(string directory)
+        // Return the total size, in bytes, of all the files below the given directory
+        public static long GetTotalSize(string directory)
 		{
-			throw new NotImplementedException();
-		}
+            long size = GetTotalSize(directory);
+            return size;
+
+        }
 
 		// Return the number of files (not counting directories) below the given directory
 		public static int CountFiles(string directory)
@@ -40,35 +42,40 @@ namespace comp110_worksheet_7
 		public static int GetDepth(string directory)
 		{
             int depth = 0;
-            string[] list = Dictionary.GetDictories(directory);
+             string[] list = Directory.GetDirectories(directory);
             bool loop = true;
-            while (loop == true) { }
-            if (list.Length >= 1)
-            {
-                depth = +1
+            while (loop == true) {
+                if (list.Length >= 1)
+                {
+                    depth = +1;
+                    list = Directory.GetDirectories(directory);
+                }
+                else
+                {
+                    loop = false;
+                    
+                }
             }
-            else
-            {
-                return depth
-            }
-		}
+           
+            return depth;
+        }
 
 		// Get the path and size (in bytes) of the smallest file below the given directory
 		public static Tuple<string, long> GetSmallestFile(string directory)
 		{
-			throw new NotImplementedException();
-		}
+            throw new NotImplementedException();
+        }
 
-		// Get the path and size (in bytes) of the largest file below the given directory
-		public static Tuple<string, long> GetLargestFile(string directory)
-		{
-			throw new NotImplementedException();
-		}
+        // Get the path and size (in bytes) of the largest file below the given directory
+        public static Tuple<string, long> GetLargestFile(string directory) {
+            throw new NotImplementedException();
+        }
 
-		// Get all files whose size is equal to the given value (in bytes) below the given directory
-		public static IEnumerable<string> GetFilesOfSize(string directory, long size)
+    // Get all files whose size is equal to the given value (in bytes) below the given directory
+    public static IEnumerable<string> GetFilesOfSize(string directory, long size)
 		{
 			throw new NotImplementedException();
 		}
 	}
 }
+

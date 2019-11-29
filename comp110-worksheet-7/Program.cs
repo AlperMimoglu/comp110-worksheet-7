@@ -10,7 +10,8 @@ namespace comp110_worksheet_7
 	class Program
 	{
 		static void Main(string[] args)
-		{
+		
+        {
 			const string c_baseDirectory = "../../../comp110-worksheet-7-tests/pixelcarpack_kenney/PNG";
 
 			try
