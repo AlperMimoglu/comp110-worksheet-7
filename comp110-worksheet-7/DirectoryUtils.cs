@@ -12,7 +12,8 @@ namespace comp110_worksheet_7
 		// Return the size, in bytes, of the given file
 		public static long GetFileSize(string filePath)
 		{
-			return new FileInfo(filePath).Length;
+            long size = GetFileSize(filePath);
+            return size;
 		}
 
 		// Return true if the given path points to a directory, false if it points to a file
@@ -30,13 +31,26 @@ namespace comp110_worksheet_7
 		// Return the number of files (not counting directories) below the given directory
 		public static int CountFiles(string directory)
 		{
-			throw new NotImplementedException();
-		}
+            string[] files = Directory.GetFiles(directory);
+            int length = files.Length;
+            return files.Length;
+        }
 
 		// Return the nesting depth of the given directory. A directory containing only files (no subdirectories) has a depth of 0.
 		public static int GetDepth(string directory)
 		{
-			throw new NotImplementedException();
+            int depth = 0;
+            string[] list = Dictionary.GetDictories(directory);
+            bool loop = true;
+            while (loop == true) { }
+            if (list.Length >= 1)
+            {
+                depth = +1
+            }
+            else
+            {
+                return depth
+            }
 		}
 
 		// Get the path and size (in bytes) of the smallest file below the given directory
