@@ -57,7 +57,7 @@ namespace comp110_worksheet_7
         public static int GetDepth(string directory)
         {
             int depth = 0;
-            string[] array_of_files = Directory.GetDirectories(directory)
+            string[] array_of_files = Directory.GetDirectories(directory);
             bool loop = true;
             for (int s = 0; array_of_files.Length > s; s++)
             {
@@ -80,7 +80,7 @@ namespace comp110_worksheet_7
             {
                 if (IsDirectory(file[s]) == true)
                 {
-                    Location_of_file, Smallest_byte = GetSmallestFile(file[s]);
+                    Location_of_file && Smallest_byte = GetSmallestFile(file[s]);
                 }
                 else if (GetFileSize(file[s]) < Smallest_byte)
                 {
@@ -103,7 +103,7 @@ namespace comp110_worksheet_7
             {
                 if (IsDirectory(file[s]) == true)
                 {
-                    Location_of_file, Largest_byte = GetLargestFile(file[s]);
+                    Location_of_file && Largest_byte = GetLargestFile(file[s]);
                 }
                 else if (GetFileSize(file[s]) < Largest_byte)
                 {
