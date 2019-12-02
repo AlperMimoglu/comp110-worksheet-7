@@ -118,24 +118,25 @@ namespace comp110_worksheet_7
     // Get all files whose size is equal to the given value (in bytes) below the given directory
     public static IEnumerable<string> GetFilesOfSize(string directory, long size)
     {
-            string[] same_file_size;     //makes an array of strings called "same_size"
-            string[] file = Directory.GetFileSystemEntries(directory);     //gets an array of files
-            for (int s = 0; file.Length > s; s++)     //loops for the length of the files
+            string[] same_file_size;     
+            string[] file = Directory.GetFileSystemEntries(directory);     
+            for (int s = 0; file.Length > s; s++)     
             {
-                if (IsDirectory(file[s]) == true)     //if the item in the array is a folder then
+                if (IsDirectory(file[s]) == true)     
                 {
-                    same_file_size_plus = GetFileSystemEntries(file[s]);     //we check the folder for files
-                    same_file_size.Add(same_size_plus);     //add any new items to the array
+                    same_file_size_plus = GetFileSystemEntries(file[s]);     
+                    same_file_size.Add(same_file_size_plus);     
+
                 }
-                else     //if the item in the array is not a folder and thus a file
+                else     
                 {
-                    if (GetFileSize(file[s]) = size)     //check to see if we have the right size
+                    if (GetFileSize(file[s]) = size)    
                     {
-                        same_file_size.Add(file[s]);     //add the files to the array
+                        same_file_size.Add(file[s]);     
                     }
                 }
             }
-            return same_file_size;     //return the list of arrays
+            return same_file_size;     
         }
     }
 }
