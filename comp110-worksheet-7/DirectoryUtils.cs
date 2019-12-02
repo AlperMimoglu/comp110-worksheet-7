@@ -57,14 +57,14 @@ namespace comp110_worksheet_7
         public static int GetDepth(string directory)
         {
             int depth = 0;
-            string[] array = Directory.GetDirectories(directory);
+            string[] array_of_files = Directory.GetDirectories(directory)
             bool loop = true;
-            for (int s = 0; folder.Length > s; s++)
+            for (int s = 0; array_of_files.Length > s; s++)
             {
-                if (folder.Length >= 1)
+                if (array_of_files.Length >= 1)
                 {
                     depth += 1;
-                    folder = Directory.GetDirectories(folder[s]);
+                    array_of_files = Directory.GetDirectories(array_of_files[s]);
                 }
             }
             return depth;
@@ -75,12 +75,12 @@ namespace comp110_worksheet_7
         {
             long Smallest_byte = 9223372036854775807;
             string Location_of_file = "";
-            string file = Directory.GetFileSystemEntries(directory);
+            string [] file = Directory.GetFileSystemEntries(directory);
             for (int s = 0; file.Length > s; s++)
             {
                 if (IsDirectory(file[s]) == true)
                 {
-                    Location_of_file && Smallest_byte = GetSmallestFile(file[s]);
+                    Location_of_file, Smallest_byte = GetSmallestFile(file[s]);
                 }
                 else if (GetFileSize(file[s]) < Smallest_byte)
                 {
@@ -98,12 +98,12 @@ namespace comp110_worksheet_7
     {
             long Largest_byte = 0;
             string Location_of_file = "";
-            string file = Directory.GetFileSystemEntries(directory);
+            string [] file = Directory.GetFileSystemEntries(directory);
             for (int s = 0; file.Length > s; s++)
             {
                 if (IsDirectory(file[s]) == true)
                 {
-                    Location_of_file && Largest_byte = GetLargestFile(file[s]);
+                    Location_of_file, Largest_byte = GetLargestFile(file[s]);
                 }
                 else if (GetFileSize(file[s]) < Largest_byte)
                 {
@@ -118,13 +118,14 @@ namespace comp110_worksheet_7
     // Get all files whose size is equal to the given value (in bytes) below the given directory
     public static IEnumerable<string> GetFilesOfSize(string directory, long size)
     {
-            string[] same_file_size;     
+            string[] same_file_size;
+            string[] same_file_size_plus;
             string[] file = Directory.GetFileSystemEntries(directory);     
             for (int s = 0; file.Length > s; s++)     
             {
                 if (IsDirectory(file[s]) == true)     
                 {
-                    same_file_size_plus = GetFileSystemEntries(file[s]);     
+                    same_file_size_plus = GetFileSystem(file[s]);     
                     same_file_size.Add(same_file_size_plus);     
 
                 }
